@@ -7,6 +7,7 @@ import dev.danvega.rc.post.PostService;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.autoconfigure.web.client.AutoConfigureWebClient;
 import org.springframework.boot.test.autoconfigure.web.client.RestClientTest;
 import org.springframework.http.MediaType;
 import org.springframework.test.web.client.MockRestServiceServer;
@@ -37,6 +38,7 @@ class PostServiceTest {
                 new Post(1, 1, "Hello, World!", "This is my first post!"),
                 new Post(2, 1, "Testing Rest Client with @RestClientTest", "This is a post about testing RestClient calls")
         );
+
         // when
         server
                 .expect(requestTo("/posts"))
