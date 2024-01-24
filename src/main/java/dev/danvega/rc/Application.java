@@ -1,6 +1,6 @@
 package dev.danvega.rc;
 
-import dev.danvega.rc.client.PostService;
+import dev.danvega.rc.post.PostService;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -17,8 +17,7 @@ public class Application {
 	@Bean
 	CommandLineRunner commandLineRunner(PostService postService) {
 		return args -> {
-			String posts = postService.findAll();
-			System.out.println(posts);
+			System.out.println(postService.findAll());
 		};
 	}
 }
