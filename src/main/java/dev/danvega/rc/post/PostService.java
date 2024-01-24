@@ -18,10 +18,8 @@ public class PostService {
     private final RestClient restClient;
 
     public PostService(RestClient.Builder builder) {
-        log.info("Creating PostService");
         this.restClient = builder
                 .baseUrl("https://jsonplaceholder.typicode.com")
-                .requestFactory(new JdkClientHttpRequestFactory())
                 .build();
     }
 

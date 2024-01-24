@@ -17,7 +17,7 @@ public class Application {
 	@Bean
 	CommandLineRunner commandLineRunner(PostService postService) {
 		return args -> {
-			System.out.println(postService.findAll());
+
 		};
 	}
 }

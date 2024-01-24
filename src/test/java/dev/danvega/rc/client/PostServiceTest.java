@@ -40,8 +40,8 @@ class PostServiceTest {
         );
 
         // when
-        server
-                .expect(requestTo("/posts"))
+        this.server
+                .expect(requestTo("https://jsonplaceholder.typicode.com/posts"))
                 .andRespond(withSuccess(objectMapper.writeValueAsString(data), MediaType.APPLICATION_JSON));
 
         // then
