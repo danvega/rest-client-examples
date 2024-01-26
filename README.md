@@ -21,8 +21,8 @@ These are the topics that I would like to cover in this series:
 - Interceptors
 - Retry (Interceptor)
 - Proxy (SimpleClientHttpRequestFactory)
-- Spring Cloud (Spring Cloud MVC)
-- Resilience (Interview with Olga) These ^ 2 might go together
+- Spring Cloud MVC
+- Resilience
 - Live Template ✅
 
 ## RestClient Instance
