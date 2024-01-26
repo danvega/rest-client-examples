@@ -4,22 +4,21 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.core.ParameterizedTypeReference;
 import org.springframework.http.client.JdkClientHttpRequestFactory;
-import org.springframework.http.client.SimpleClientHttpRequestFactory;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestClient;
 
-import java.lang.reflect.Type;
 import java.util.List;
 
 @Service
-public class PostService {
+public class PostClient {
 
-    private static final Logger log = LoggerFactory.getLogger(PostService.class);
+    private static final Logger log = LoggerFactory.getLogger(PostClient.class);
     private final RestClient restClient;
 
-    public PostService(RestClient.Builder builder) {
+    public PostClient(RestClient.Builder builder) {
         this.restClient = builder
                 .baseUrl("https://jsonplaceholder.typicode.com")
+                .requestFactory(new JdkClientHttpRequestFactory())
                 .build();
     }
 
