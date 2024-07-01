@@ -15,11 +15,13 @@ public class PostClient {
     private static final Logger log = LoggerFactory.getLogger(PostClient.class);
     private final RestClient restClient;
 
-    public PostClient(RestClient.Builder builder) {
-        this.restClient = builder
-                .baseUrl("https://jsonplaceholder.typicode.com")
-                .requestFactory(new JdkClientHttpRequestFactory())
-                .build();
+    /*
+     * The RestClient and RestClientCustomizer are created in Application.java
+     * This is a workaround for the RestClientTest issue and more about that can be
+     * found here https://github.com/spring-projects/spring-boot/issues/38832
+     */
+    public PostClient(RestClient restClient) {
+        this.restClient = restClient;
     }
 
     public List<Post> findAll() {
